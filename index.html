@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức 24h</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href=".vscode/styles.css" />
+</head>
+<body>
+  <!-- HEADER KIỂU 24H -->
+  <header class="header24h">
+    <!-- TOP BAR TRẮNG -->
+    <div class="top-header">
+      <div class="top-left">
+        <!-- Logo -->
+        <img src=".vscode/images/logona.png" alt="logo" class="logo24h">
+          <div class="logo-caption">
+            TRANG THÔNG TIN ĐIỆN TỬ TỔNG HỢP
+          </div>
+        </a>
+
+        <!-- Các link nhanh bên trái -->
+        <nav class="top-quick-links">
+          <a href="#">SEA GAMES 33</a>
+          <a href="#">Giá vàng</a>
+          <a href="#">Cup C1</a>
+          <a href="#">Đoán tỷ số</a>
+          <a href="#">Lịch</a>
+        </nav>
+      </div>
+
+      <div class="top-right">
+        <!-- Ô tìm kiếm -->
+        <form class="search-box">
+          <input type="text" placeholder="Nhập tin tức cần tìm" />
+          <button type="submit" aria-label="Tìm kiếm">🔍</button>
+        </form>
+
+        <!-- Đăng nhập -->
+        <a href="#" class="login-link">
+          <span class="login-icon">👤</span>
+          <span>Đăng nhập</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- THANH MENU XANH -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <div class="nav-left-icons">
+          <!-- Nút menu 3 gạch -->
+          <button class="icon-btn" aria-label="Menu">
+            <span class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <span class="nav-divider"></span>
+          <!-- Nút home -->
+          <button class="icon-btn home-btn" aria-label="Trang chủ">
+            <span class="home-icon">🏠</span>
+          </button>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="#">TIN TỨC</a></li>
+          <li><a href="#">BÓNG ĐÁ</a></li>
+          <li><a href="#">SEA GAMES 33</a></li>
+          <li><a href="#">KINH DOANH</a></li>
+          <li><a href="#">GIẢI TRÍ</a></li>
+          <li><a href="#">24H THÍCH BÓNG ĐÁ - THỂ THAO</a></li>
+          <li><a href="#">SỨC KHỎE</a></li>
+          <li><a href="#">HI-TECH</a></li>
+          <li><a href="#">THẾ GIỚI</a></li>
+          <li><a href="#">Ô TÔ</a></li>
+        </ul>
+      </div>
+
+
+<!-- phần nội dung-->
+   <main class="page-main">
+  <section class="home-layout">
+
+    <!-- KHU NỘI DUNG TRUNG TÂM -->
+    <section class="home-center">
+      <div class="center-grid">
+
+        <!-- CỘT TRÁI: TIN LỚN + 3 TIN NHỎ -->
+        <div class="center-main">
+          <!-- Tin nổi bật -->
+          <article class="feature-article">
+            <a href="#">
+              <div class="feature-thumb">
+                <img src=".vscode/images/tt1.png" alt="Tiêu đề tin lớn">
+    
+              </div>
+              <h2 class="feature-title">
+                Cháy chung cư Hồng Kông: Tiết lộ của cư dân kèm ảnh hiện trường gây bất ngờ
+              </h2>
+              <p class="feature-summary">
+                Ảnh hiện trường lan truyền khiến dư luận nghi ngờ về lý do khiến hỏa hoạn
+                ở khu chung cư Wang Fuk Court (Hồng Kông – Trung Quốc) thảm khốc đến vậy.
+              </p>
+            </a>
+          </article>
+
+          <!-- Hàng 3 tin nhỏ bên dưới -->
+          <div class="sub-grid">
+            <article class="sub-article">
+              <a href="#">
+                <img src=".vscode/images/tt2.jpg" alt="">
+                <h3>Dự đoán vòng 14 Ngoại hạng Anh: MU...</h3>
+              </a>
+            </article>
+            <article class="sub-article">
+              <a href="#">
+                <img src=".vscode/images/tt3.jpg" alt="">
+                <h3>Dàn sao hot nhất SEA Games 33: Đình Bắc...</h3>
+              </a>
+            </article>
+            <article class="sub-article">
+              <a href="#">
+                <img src="" alt="">
+                <h3>MU nửa mừng nửa lo dù thắng ngược...</h3>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: “TIN TỨC TRONG NGÀY” -->
+        <aside class="center-side">
+          <section class="short-news-block">
+            <h4 class="short-heading">Tin tức trong ngày</h4>
+            <ul class="short-list">
+              <li class="short-item">
+                <a href="#">
+                  <span class="short-cat">Kinh doanh</span>
+                  <p>Tài khoản có số dư dưới 500.000 đồng/tháng sẽ bị thu phí quản lý</p>
+                </a>
+              </li>
+              <li class="short-item">
+                <a href="#">
+                  <span class="short-cat">Giải trí</span>
+                  <p>Angela Phương Trinh ngày càng lộ...</p>
+                </a>
+              </li>
+              <li class="short-item">
+                <a href="#">
+                  <span class="short-cat">Thời trang</span>
+                  <p>Đỗ Mỹ Linh lộ bụng lùm lùm giữa tin bầu bí</p>
+                </a>
+              </li>
+              <li class="short-item">
+                <a href="#">
+                  <span class="short-cat">Ô tô</span>
+                  <p>Cặp đôi siêu xe Ferrari bỏ hoang suốt 30 năm, rất ít chi tiết bị hỏng</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- CỘT BANNER PHẢI -->
+    <aside class="banner banner-right">
+      <img src=".vscode/images/banner.png" alt="Quảng cáo phải">
+    </aside>
+
+  </section>
+</main>

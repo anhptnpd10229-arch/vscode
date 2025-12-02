@@ -1,0 +1,525 @@
+.adbro-traphaco {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin: 0 !important;
+}
+
+.adbro-traphaco * {
+	box-sizing: border-box;
+}
+
+.adbro-traphaco__block {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 !important;
+	background: url(../images/traphaco-block-bg.jpg) no-repeat center center / cover;
+	-webkit-animation: fadeIn24 1s 1.5s both, slideOutDown24 0.5s 6.5s forwards;
+	animation: fadeIn24 1s 1.5s both, slideOutDown24 0.5s 6.5s forwards;
+	z-index: 2;
+}
+
+.adbro-traphaco__block-link,
+.adbro-traphaco__block-img,
+.adbro-traphaco__block-text,
+.adbro-traphaco__block-logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 !important;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+}
+
+.adbro-traphaco__block-img {
+	background-image: url(../images/traphaco-block-img.png);
+	background-position: right bottom;
+	-webkit-animation: fadeInRight24 0.7s 1.7s both;
+	animation: fadeInRight24 0.7s 1.7s both;
+}
+
+.adbro-traphaco__block-text--1 {
+	background-image: url(../images/traphaco-block-text.png);
+	-webkit-animation: fadeInLeft24 0.7s 1.7s both;
+	animation: fadeInLeft24 0.7s 1.7s both;
+}
+
+.adbro-traphaco__block-text--2 {
+	background-image: url(../images/traphaco-block-text2.png);
+	-webkit-animation: fadeInLeft24 0.7s 1.9s both;
+	animation: fadeInLeft24 0.7s 1.9s both;
+}
+
+.adbro-traphaco__block-text--3 {
+	background-image: url(../images/traphaco-block-text3.png);
+	-webkit-animation: fadeInUp24 0.7s 2s both;
+	animation: fadeInUp24 0.7s 2s both;
+}
+
+.adbro-traphaco__block-logo {
+	background-image: url(../images/traphaco-block-logo.png);
+	-webkit-animation: fadeInDown24 0.7s 1.7s both;
+	animation: fadeInDown24 0.7s 1.7s both;
+}
+
+.adbro-takeover-replay .adbro-close {
+	bottom: auto;
+	top: 10px;
+	right: 10px;
+}
+
+.adbro-traphaco__container {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin: 0 !important;
+	margin-left: -400px !important;
+	width: 800px;
+	height: 170px;
+	max-width: none !important;
+}
+
+.adbro-traphaco__bg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0 !important;
+	background: url(../images/traphaco-bg.png) no-repeat center bottom / cover;
+	width: 100%;
+	height: 81px;
+	-webkit-animation: slideInUp24 0.5s 0.3s both;
+	animation: slideInUp24 0.5s 0.3s both;
+	overflow: hidden;
+}
+
+.adbro-traphaco__img {
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	margin: 0 !important;
+	margin-left: -69px !important;
+	background: url(../images/traphaco-img.png) no-repeat left bottom / contain;
+	width: 130px;
+	height: 147px;
+	-webkit-animation: fadeInUp24 0.7s 0.7s both;
+	animation: fadeInUp24 0.7s 0.7s both;
+}
+
+.adbro-traphaco__text {
+	position: absolute;
+	left: 50%;
+	margin: 0 !important;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: contain;
+}
+
+.adbro-traphaco__text--1 {
+	bottom: 2px;
+	margin-left: -214px !important;
+	background-image: url(../images/traphaco-text.png);
+	width: 161px;
+	height: 71px;
+	-webkit-animation: fadeInDown24 0.7s 0.7s both;
+	animation: fadeInDown24 0.7s 0.7s both;
+}
+
+.adbro-sm .adbro-traphaco__text--1 {
+    bottom: 12px;
+    margin-left: -180px !important;
+    width: 130px;
+}
+
+.adbro-traphaco__text--2 {
+	bottom: 73px;
+	margin-left: 23px !important;
+	background-image: url(../images/traphaco-text2.png);
+	width: 63px;
+	height: 56px;
+	-webkit-animation: fadeInLeft24 0.7s 1s both;
+	animation: fadeInLeft24 0.7s 1s both;
+}
+
+.adbro-traphaco__text--3 {
+	bottom: 15px;
+	margin-left: 65px !important;
+	background-image: url(../images/traphaco-text3.png);
+	width: 141px;
+	height: 54px;
+	-webkit-animation: fadeInDown24 0.7s 0.9s both;
+	animation: fadeInDown24 0.7s 0.9s both;
+}
+
+.adbro-sm .adbro-traphaco__text--3 {
+    bottom: 25px;
+    margin-left: 60px !important;
+    width: 100px;
+}
+
+.adbro-traphaco__text--4 {
+	bottom: 7px;
+	margin-left: 215px !important;
+	background-image: url(../images/traphaco-text4.png);
+	width: 101px;
+	height: 10px;
+	-webkit-animation: fadeInUp24 0.7s 0.7s both;
+	animation: fadeInUp24 0.7s 0.7s both;
+}
+
+.adbro-sm .adbro-traphaco__text--4 {
+    margin-left: 133px !important;
+}
+
+.adbro-traphaco__logo {
+	position: absolute;
+	bottom: 16px;
+	left: 50%;
+	margin: 0 !important;
+	margin-left: -318px !important;
+	background: url(../images/traphaco-logo.png) no-repeat left bottom / contain;
+	width: 88px;
+	height: 24px;
+	-webkit-animation: fadeInLeft24 0.7s 0.7s both;
+	animation: fadeInLeft24 0.7s 0.7s both;
+}
+
+.adbro-sm .adbro-traphaco__logo {
+    margin-left: -238px !important;
+    width: 60px;
+}
+
+.adbro-traphaco__btn {
+	position: absolute;
+	bottom: 19px;
+	left: 50%;
+	margin: 0 !important;
+	margin-left: 217px !important;
+	background: url(../images/traphaco-btn.png) no-repeat left bottom / contain;
+	width: 98px;
+	height: 25px;
+	-webkit-animation: fadeInRight24 0.7s 0.7s both;
+	animation: fadeInRight24 0.7s 0.7s both;
+}
+
+.adbro-sm .adbro-traphaco__btn {
+    margin-left: 160px !important;
+    width: 80px;
+}
+
+.adbro-traphaco__btn::after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	opacity: 0;
+	background: linear-gradient(
+			to right,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.03) 1%,
+			rgba(255, 255, 255, 0.5) 30%,
+			rgba(255, 255, 255, 0.7) 50%,
+			rgba(255, 255, 255, 0.9) 70%,
+			rgba(255, 255, 255, 0) 100%
+	);
+	width: 25%;
+	height: 76%;
+	-webkit-animation: shine24 2s 2.2s;
+	animation: shine24 2s 2.2s;
+	-webkit-animation-iteration-count: 7;
+	animation-iteration-count: 7;
+}
+
+.adbro-sm .adbro-traphaco__btn::after {
+    top: 7px;
+    height: 61%;
+}
+
+.adbro-replay {
+	position: absolute;
+	bottom: 45px;
+	left: 5px;
+	margin: 0 !important;
+	background: url(https://cdn.adbro.me/inimage/images/adbro-replay.svg) no-repeat 50% 50%;
+	background-size: 100% 100%;
+	width: 24px;
+	height: 23px;
+	-webkit-animation: fadeIn24 1s 0.6s both;
+	animation: fadeIn24 1s 0.6s both;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.adbro-link {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 120px;
+	margin: 0 !important;
+	cursor: pointer;
+}
+
+.adbro-close {
+	position: absolute;
+	bottom: 80px;
+	right: 5px;
+	background: url(https://cdn.adbro.me/inimage/images/adbro-close.svg) no-repeat;
+	background-size: 100% 100%;
+	width: 22px;
+	height: 22px;
+	-webkit-animation: fadeIn24 1s 0.4s both;
+	animation: fadeIn24 1s 0.4s both;
+	cursor: pointer;
+	margin: 0 !important;
+	z-index: 1;
+}
+
+.adbro-icon {
+	position: absolute;
+	bottom: 51px;
+	right: 3px;
+	background: url(https://cdn.adbro.me/inimage/images/adbro-icon2.svg) no-repeat 50% 50%;
+	background-size: 100% 100%;
+	width: 25px;
+	height: 24px;
+	-webkit-animation: fadeIn24 1s 0.4s both;
+	animation: fadeIn24 1s 0.4s both;
+	cursor: pointer;
+	margin: 0 !important;
+	z-index: 1;
+}
+
+@-webkit-keyframes fadeIn24 {
+	from {
+		opacity: 0;
+		}
+
+	to {
+		opacity: 1;
+		}
+	}
+
+@keyframes fadeIn24 {
+	from {
+		opacity: 0;
+		}
+
+	to {
+		opacity: 1;
+		}
+	}
+
+@-webkit-keyframes fadeInLeft24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, 0, 0);
+		transform: translate3d(-50%, 0, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@keyframes fadeInLeft24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, 0, 0);
+		transform: translate3d(-50%, 0, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@-webkit-keyframes fadeInRight24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(50%, 0, 0);
+		transform: translate3d(50%, 0, 0);
+		}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@keyframes fadeInRight24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(50%, 0, 0);
+		transform: translate3d(50%, 0, 0);
+		}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@-webkit-keyframes fadeInUp24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 50%, 0);
+		transform: translate3d(0, 50%, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@keyframes fadeInUp24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 50%, 0);
+		transform: translate3d(0, 50%, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@-webkit-keyframes fadeInDown24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -50%, 0);
+		transform: translate3d(0, -50%, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@keyframes fadeInDown24 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -50%, 0);
+		transform: translate3d(0, -50%, 0);
+		}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		}
+	}
+
+@-webkit-keyframes slideInUp24 {
+	from {
+		-webkit-transform: translate3d(0, 200%, 0);
+		transform: translate3d(0, 200%, 0);
+		visibility: visible;
+		}
+
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		}
+	}
+
+@keyframes slideInUp24 {
+	from {
+		-webkit-transform: translate3d(0, 200%, 0);
+		transform: translate3d(0, 200%, 0);
+		visibility: visible;
+		}
+
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		}
+	}
+
+@-webkit-keyframes shine24 {
+	0% {
+		left: 10%;
+		opacity: 0;
+		}
+	5% {
+		opacity: 0;
+		}
+	50% {
+		opacity: 0.8;
+		}
+	80% {
+		opacity: 0;
+		}
+	100% {
+		left: 90%;
+		}
+	}
+
+@keyframes shine24 {
+	0% {
+		left: 10%;
+		opacity: 0;
+		}
+	5% {
+		opacity: 0;
+		}
+	50% {
+		opacity: 0.3;
+		}
+	80% {
+		opacity: 0;
+		}
+	100% {
+		left: 90%;
+		}
+	}
+
+@-webkit-keyframes slideOutDown24 {
+	from {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+}
+
+@keyframes slideOutDown24 {
+	from {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+}

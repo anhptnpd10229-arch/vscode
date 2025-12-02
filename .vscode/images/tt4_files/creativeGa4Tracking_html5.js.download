@@ -1,0 +1,212 @@
+// adEventListener polyfill
+!function(){if(Event.prototype.preventDefault||(Event.prototype.preventDefault=function(){this.returnValue=!1}),Event.prototype.stopPropagation||(Event.prototype.stopPropagation=function(){this.cancelBubble=!0}),!Element.prototype.addEventListener){var e=[],t=function(t,n){var o=this,r=function(e){e.target=e.srcElement,e.currentTarget=o,void 0!==n.handleEvent?n.handleEvent(e):n.call(o,e)};if("DOMContentLoaded"==t){var a=function(e){"complete"==document.readyState&&r(e)};if(document.attachEvent("onreadystatechange",a),e.push({object:this,type:t,listener:n,wrapper:a}),"complete"==document.readyState){var p=new Event;p.srcElement=window,a(p)}}else this.attachEvent("on"+t,r),e.push({object:this,type:t,listener:n,wrapper:r})},n=function(t,n){for(var o=0;o<e.length;){var r=e[o];if(r.object==this&&r.type==t&&r.listener==n){"DOMContentLoaded"==t?this.detachEvent("onreadystatechange",r.wrapper):this.detachEvent("on"+t,r.wrapper),e.splice(o,1);break}++o}};Element.prototype.addEventListener=t,Element.prototype.removeEventListener=n,HTMLDocument&&(HTMLDocument.prototype.addEventListener=t,HTMLDocument.prototype.removeEventListener=n),Window&&(Window.prototype.addEventListener=t,Window.prototype.removeEventListener=n)}}();
+
+var creativeScriptId = document.getElementById("creativeGa4Tracking_html5");
+var ga4Tracking = false;
+if(creativeScriptId){
+	var ga4IdString = creativeScriptId.getAttribute('data-ga4_ids');
+	if(ga4IdString){
+		var gaIdsArr = [];
+
+		try {
+            gaIdsArr = JSON.parse([ga4IdString]);
+
+            if(gaIdsArr.length>0){
+            	ga4Tracking = true;
+
+            	for(var i = 0; i<gaIdsArr.length; i++){
+            		gtag('config', gaIdsArr[i], {'send_page_view': false,  'transport_type': 'beacon'});
+            	}
+            }
+
+        } catch (error) {
+            console.log('tracking24hGa4_html5 - error: ', error)
+        }
+	}
+
+	if(ga4Tracking===true){
+		var EVENT_IMPRESSION      = creativeScriptId.getAttribute('data-EVENT_IMPRESSION');
+		var EVENT_ADS_CLICK       = creativeScriptId.getAttribute('data-EVENT_ADS_CLICK');
+		var EVENT_HOVER_TO_ACTION = creativeScriptId.getAttribute('data-HOVER_TO_ACTION');
+		var EVENT_CLICK_TO_ACTION = creativeScriptId.getAttribute('data-CLICK_TO_ACTION');
+		var EVENT_REPLAY_AD_INTER = creativeScriptId.getAttribute('data-REPLAY_AD_INTER');
+		var LINE_ITEM_ID          = creativeScriptId.getAttribute('data-LINE_ITEM_ID');
+		var ADVERTISER_ID         = creativeScriptId.getAttribute('data-ADVERTISER_ID');
+		var ORDER_ID              = creativeScriptId.getAttribute('data-ORDER_ID');
+		var CREATIVE_ID           = creativeScriptId.getAttribute('data-CREATIVE_ID');
+		var ADUNIT_ID             = creativeScriptId.getAttribute('data-ADUNIT_ID');
+		var tracking24hGa4Debug   = creativeScriptId.getAttribute('data-tracking24hGa4Debug');
+
+		// 20250220 - on/off debug
+		tracking24hGa4Debug = typeof tracking24hGa4Debug != 'undefined' && tracking24hGa4Debug == 'true' ? true : false;
+
+		var toSendObj = {
+	        campainName_24h : typeof CAMPAIN_NAME == 'undefined' ? (LINE_ITEM_ID + ':' + CREATIVE_ID) : CAMPAIN_NAME,
+	        type_24h        : '',
+	        device_24h      : DEVICE,
+	        creativeType_24h: typeof CAMPAIN_NAME == 'undefined' ? '' : '',
+	        lineItemId_24h  : (LINE_ITEM_ID || ''),
+	        advertiserId_24h: (ADVERTISER_ID || ''),
+	        orderId_24h     : (ORDER_ID || ''),
+	        creativeId_24h  : (CREATIVE_ID || ''),
+	        adUnitId_24h    : (ADUNIT_ID || ''),
+	        website_24h     : (ADS_FROM || '')
+	    };
+	}
+}
+
+// 20250220 - on/off debug
+function tracking24hGa4Log(call_func = '', mess = '', toSendObj = false){
+	if (!ga4Tracking || !tracking24hGa4Debug){
+		return;
+	}
+
+	mess = 'tracking24hGa4_html5' + (call_func != '' ? '->'+call_func : '') + ':' + mess;
+	console.log(mess, toSendObj);
+}
+
+function tracking24hGa4Send(obj){
+	if (!ga4Tracking){
+		return;
+	}
+
+	// reset type_24h
+	toSendObj.type_24h = '';
+
+	// set new type_24h
+	if (obj && obj.eventType){
+		toSendObj.type_24h = obj.eventType;
+	}
+
+	if (!toSendObj){
+		tracking24hGa4Log('send', 'Params is required');
+		return false;
+	}
+
+	// 20250220 - XLCYCMHENG-44111 - off tracking impression ở toàn bộ các mẫu quảng cáo
+	if (!toSendObj.type_24h || ['impression'].includes(toSendObj.type_24h)){
+		tracking24hGa4Log('send', 'EventType: "'+toSendObj.type_24h+'" is not in allowed list');
+		return false;
+	}
+
+	tracking24hGa4Log('send', 'Going to send Gtag Event', toSendObj);
+	gtag('event', 'GA4_CREATIVE_TRACKING', toSendObj);
+}
+
+function impressionTrack(){
+    var impDiv = document.getElementById('impressionTrack');
+
+    if(impDiv && typeof IMPRESSION_URL != 'undefined'){
+        var url = replaceTimestamp(IMPRESSION_URL);
+        // GẮN IMPRESSION Ở ĐÂY
+        impDiv.innerHTML = '<img src="'+url+'" border="0" width="0" height="0" style="display:none;" />';
+
+    } else if(impDiv && typeof IMPRESSION_URL == 'undefined'){
+    	impDiv.innerHTML = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" border="0" width="0" height="0" style="display:none;" />';
+    }
+
+	if (EVENT_IMPRESSION && toSendObj && ga4Tracking) {
+        tracking24hGa4Send({eventType: EVENT_IMPRESSION})
+	}
+}
+
+function clickTrack(URL){
+	var urlToOpen = '';
+
+	if(typeof URL!='undefined'){
+		urlToOpen = URL;
+	}
+	else if(typeof URL == 'undefined' && typeof V_URL!='undefined'){
+		urlToOpen = V_URL;
+	}
+	if(urlToOpen!=''){
+        urlToOpen = replaceTimestamp(urlToOpen);
+		window.open(urlToOpen);
+	}
+
+	if(EVENT_ADS_CLICK && toSendObj && ga4Tracking) {
+		tracking24hGa4Send({eventType: EVENT_ADS_CLICK})
+	}
+}
+
+function hoverToActionTrack(){
+	var impDiv = document.getElementById('hoverToActionTrack');
+
+	if(impDiv && typeof HOVER_TO_ACTION_URL != 'undefined'){
+		// GẮN IMPRESSION Ở ĐÂY
+		impDiv.innerHTML = '<img src="'+HOVER_TO_ACTION_URL+'" border="0" width="0" height="0" style="display:none;" />';
+
+	} else if(impDiv && typeof HOVER_TO_ACTION_URL == 'undefined'){
+		impDiv.innerHTML = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" border="0" width="0" height="0" style="display:none;" />';
+	}
+
+	if(EVENT_HOVER_TO_ACTION && toSendObj && ga4Tracking) {
+		tracking24hGa4Send({eventType: EVENT_HOVER_TO_ACTION})
+	}
+}
+
+function clickToActionTrack(p_name_action){
+	var divIDTrack = 'clickToActionTrack';
+	var urlTrackClick = '';
+	if (p_name_action == 'a') {
+		divIDTrack = 'clickToActionTrackA';
+		urlTrackClick = CLICK_TO_ACTION_URL_A;
+	} else if (p_name_action == 'b') {
+		divIDTrack = 'clickToActionTrackB';
+		urlTrackClick = CLICK_TO_ACTION_URL_B;
+	} else if (typeof(CLICK_TO_ACTION_URL) != 'undefined') {
+		urlTrackClick = CLICK_TO_ACTION_URL;
+	}
+	var impDiv = document.getElementById(divIDTrack);
+
+	if(impDiv && typeof urlTrackClick != 'undefined' && urlTrackClick != ''){
+		// GẮN IMPRESSION Ở ĐÂY
+		impDiv.innerHTML = '<img src="'+urlTrackClick+'" border="0" width="0" height="0" style="display:none;" />';
+
+	} else if(impDiv && (typeof(urlTrackClick) == 'undefined' || urlTrackClick == '')){
+		impDiv.innerHTML = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" border="0" width="0" height="0" style="display:none;" />';
+	}
+
+	if(EVENT_CLICK_TO_ACTION && toSendObj && ga4Tracking) {
+		if (p_name_action == 'a') {
+			tracking24hGa4Send({eventType: EVENT_CLICK_TO_ACTION+'A'})
+		} else if (p_name_action == 'b') {
+			tracking24hGa4Send({eventType: EVENT_CLICK_TO_ACTION+'B'})
+		} else {
+			tracking24hGa4Send({eventType: EVENT_CLICK_TO_ACTION})
+		}
+	}
+}
+
+function replayAdInterTrack(){
+	var impDiv = document.getElementById('replayAdInterTrack');
+
+	if(impDiv && typeof REPLAY_AD_INTER_URL != 'undefined'){
+		// GẮN IMPRESSION Ở ĐÂY
+		impDiv.innerHTML = '<img src="'+REPLAY_AD_INTER_URL+'" border="0" width="0" height="0" style="display:none;" />';
+
+	} else if(impDiv && typeof REPLAY_AD_INTER_URL == 'undefined'){
+		impDiv.innerHTML = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" border="0" width="0" height="0" style="display:none;" />';
+	}
+
+	if(EVENT_REPLAY_AD_INTER && toSendObj && ga4Tracking) {
+		tracking24hGa4Send({eventType: EVENT_REPLAY_AD_INTER})
+	}
+}
+
+function replaceTimestamp(p_url){
+    if (typeof p_url !== 'string' || p_url.trim() == ''){
+        return p_url;
+    }
+
+    var randomString = new Date().getTime();
+    p_url = p_url.replace("__random-number__", randomString);
+    p_url = p_url.replace("[timestamp]", randomString);
+    p_url = p_url.replace("[timestamp", randomString);
+    p_url = p_url.replace("%5Btimestamp%5D", randomString);
+    p_url = p_url.replace("%5Btimestamp", randomString);
+    p_url = p_url.replace("%5btimestamp", randomString);
+    p_url = p_url.replace("timestamp", randomString);
+    
+    return p_url;
+}

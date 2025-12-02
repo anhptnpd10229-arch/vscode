@@ -1,0 +1,33 @@
+
+<!-- saved from url=(0140)https://cdn.24h.com.vn/upload/1-2025/images/2025-01-22/html5_banner_thuong_1737514893_990/1737514893_index.html?cID=48&pos=150&1764583090926 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1258">
+		<style>
+			body{margin:0}
+		</style>
+		<script language="javascript" type="text/javascript">
+			param = "";
+			var url = window.location.href;
+			var arr_tmp = url.split("?");
+			if (arr_tmp.length > 1){ // Lấy tham số sau ? để truyền lên trên
+				param = arr_tmp[1];
+			}
+			
+			function call_parent(p_mes){
+				window.parent.postMessage(p_mes + "#:|:#" + param, "*");
+			}
+			function fw_parent(event){
+				call_parent(event.data);
+			}
+		</script>
+	</head>
+	<body marginwidth="0" marginheight="0">
+		<iframe src="./index.html" style="width:100%;height:100%;" frameborder="0" scrolling="no"></iframe>
+		<script language="javascript" type="text/javascript">
+			if (window.addEventListener){
+				addEventListener("message", fw_parent, false);
+			} else {
+				attachEvent("onmessage", fw_parent);
+			}
+		</script>
+	
+</body></html>
